@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+<rect width="800" height="1000" fill="#fdf8dc"/>
+<circle cx="560" cy="230" r="110" fill="#fbf1b5"/>
+<g fill="none" stroke="#8a6a00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<!-- tree -->
+<path d="M250 760V470"/>
+<path d="M250 480c-130 0-190-90-150-190 10-90 110-140 180-100 80-50 190 0 190 100 50 90-20 190-120 190z" fill="#f3e08a"/>
+<path d="M250 600l-50-50M250 560l50-46"/>
+<!-- bench -->
+<path d="M380 700h300M380 650h300M400 700v60M660 700v60M390 650v-60M670 650v-60M390 590h280"/>
+<!-- two people on the bench -->
+<circle cx="490" cy="560" r="30" fill="#fff"/><circle cx="570" cy="560" r="30" fill="#fff"/>
+<path d="M450 650c0-40 20-60 40-60s40 20 40 60zM530 650c0-40 20-60 40-60s40 20 40 60z" fill="#fff"/>
+<!-- heart -->
+<path d="M530 470c-22-18-34-30-34-46a20 20 0 0 1 34-12 20 20 0 0 1 34 12c0 16-12 28-34 46z" fill="#fbf1b5"/>
+<path d="M80 760h640"/>
+</g>
+<text x="400" y="900" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#6f5500">Sample picture</text>
+</svg>

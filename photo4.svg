@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<rect width="600" height="600" fill="#fdf8dc"/>
+<g fill="none" stroke="#8a6a00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M170 470V260a130 130 0 0 1 260 0v210" />
+<path d="M210 470V265a90 90 0 0 1 180 0v205" stroke-dasharray="2 14"/>
+<path d="M90 470h420"/>
+<path d="M300 470V330" stroke-width="3"/>
+</g>
+<g fill="#f3e08a" stroke="#8a6a00" stroke-width="4">
+<circle cx="170" cy="300" r="20"/><circle cx="185" cy="225" r="17"/><circle cx="232" cy="165" r="20"/><circle cx="300" cy="138" r="22"/><circle cx="368" cy="165" r="20"/><circle cx="415" cy="225" r="17"/><circle cx="430" cy="300" r="20"/>
+</g>
+<g fill="#fff" stroke="#8a6a00" stroke-width="4">
+<circle cx="172" cy="262" r="14"/><circle cx="205" cy="192" r="14"/><circle cx="265" cy="146" r="14"/><circle cx="335" cy="146" r="14"/><circle cx="395" cy="192" r="14"/><circle cx="428" cy="262" r="14"/>
+</g>
+<text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#6f5500">Sample picture · the ceremony arch</text>
+</svg>

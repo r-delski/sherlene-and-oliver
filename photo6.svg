@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<rect width="600" height="600" fill="#fdf8dc"/>
+<g fill="none" stroke="#8a6a00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<rect x="110" y="190" width="380" height="250" rx="6" fill="#fff"/>
+<path d="M110 196l190 140 190-140"/>
+<path d="M110 434l140-128M490 434L350 306"/>
+<path d="M300 300c-34-27-52-45-52-70a30 30 0 0 1 52-18 30 30 0 0 1 52 18c0 25-18 43-52 70z" fill="#f3e08a"/>
+</g>
+<g fill="#f3e08a"><circle cx="90" cy="110" r="10"/><circle cx="510" cy="130" r="8"/><circle cx="530" cy="470" r="9"/><circle cx="70" cy="480" r="7"/></g>
+<text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#6f5500">Sample picture · the invitation</text>
+</svg>

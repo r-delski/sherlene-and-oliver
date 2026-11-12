@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<rect width="600" height="600" fill="#fff"/>
+<rect x="30" y="30" width="540" height="540" fill="#fbf1b5"/>
+<g fill="none" stroke="#8a6a00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<g transform="rotate(-12 240 300)">
+<path d="M195 150h90l-12 120a33 33 0 0 1-66 0z" fill="#fff"/>
+<path d="M203 220h74" /><path d="M240 303v130M200 433h80"/>
+</g>
+<g transform="rotate(12 360 300)">
+<path d="M315 150h90l-12 120a33 33 0 0 1-66 0z" fill="#fff"/>
+<path d="M323 220h74"/><path d="M360 303v130M320 433h80"/>
+</g>
+<path d="M300 110v-30M270 118l-14-24M330 118l14-24"/>
+</g>
+<g fill="#8a6a00"><circle cx="232" cy="250" r="5"/><circle cx="250" cy="235" r="4"/><circle cx="352" cy="240" r="5"/><circle cx="370" cy="255" r="4"/></g>
+<text x="300" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#6f5500">Sample picture · the toast</text>
+</svg>

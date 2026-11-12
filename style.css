@@ -1,0 +1,793 @@
+/* ==========================================================
+   Wedding invitation — white with a touch of pastel yellow
+   Change the colours here and the whole site follows.
+   ========================================================== */
+:root {
+  --white: #ffffff;
+  --yellow: #fbf1b5;        /* pastel yellow bands */
+  --yellow-line: #d9cf9a;   /* thin borders */
+  --gold: #8a6a00;          /* the "&" and the sprig outline */
+  --gold-text: #6f5500;     /* small labels on white */
+  --ink: #2b2a26;           /* main text and buttons */
+  --error: #a3261c;
+
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+p, h1, h2, h3 { margin: 0; }
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.center { text-align: center; }
+.strong { font-weight: 500; }
+
+.caps {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-text);
+}
+.label.dark { color: var(--ink); margin-bottom: 0.25rem; }
+
+.serif-lg { font-family: var(--serif); font-size: 1.625rem; line-height: 1.3; }
+.serif-md { font-family: var(--serif); font-size: 1.5rem; line-height: 1.3; }
+
+/* ---------- Layout ---------- */
+.wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.wrap.narrow { max-width: 52rem; gap: 2rem; }
+.wrap.slim { max-width: 40rem; gap: 1.5rem; }
+
+.section { padding: 5rem 1.5rem; }
+.section.tight-top { padding-top: 0; }
+.band { background: var(--yellow); padding: 4.5rem 1.5rem; }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 6rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.sprig {
+  fill: var(--yellow);
+  stroke: var(--gold);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.eyebrow {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.names {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1.05;
+}
+.amp { font-style: italic; color: var(--gold); }
+
+.lead {
+  max-width: 34rem;
+  font-family: var(--serif);
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  line-height: 1.4;
+}
+
+.date-band {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  padding: 1.25rem 2rem;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+.date {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.1;
+}
+
+/* ---------- Countdown ---------- */
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.countdown[hidden] { display: none; }
+.countdown-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.countdown-row div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 5.25rem;
+  padding: 0.875rem 0.5rem 0.75rem;
+  border: 1px solid var(--yellow-line);
+  border-radius: 2px;
+  background: var(--white);
+}
+.countdown-caption {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+.countdown strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.countdown span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0.875rem 2.25rem;
+  border: 0;
+  border-radius: 2px;
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { background: #000000; }
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+.btn[disabled] { opacity: 0.6; cursor: wait; }
+
+/* ---------- Parents ---------- */
+.pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.5rem;
+}
+
+/* ---------- Detail cards ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--yellow-line);
+  border-radius: 2px;
+  text-align: center;
+}
+
+/* ---------- Programme ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid var(--yellow-line);
+}
+.timeline li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  padding: 1.125rem 0;
+  border-top: 1px solid var(--yellow-line);
+}
+.timeline time {
+  flex: 0 0 6.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.timeline span {
+  flex: 1 1 12rem;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+/* ---------- Entourage ---------- */
+.entourage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+.entourage > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+/* ---------- RSVP form ---------- */
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--yellow-line);
+  border-radius: 2px;
+  text-align: left;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.field > label,
+.field > legend {
+  padding: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.field > legend { margin-bottom: 0.5rem; }
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid #8c8674;
+  border-radius: 2px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+textarea { resize: vertical; }
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+.choice input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--ink);
+}
+
+.rsvp-form .btn { align-self: center; margin-top: 0; }
+
+.form-status { min-height: 1.6em; text-align: center; font-weight: 500; }
+.form-status.error { color: var(--error); }
+
+/* Spam trap: kept out of sight and out of the tab order */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--yellow-line);
+  text-align: center;
+}
+.closing {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+/* ---------- Opening cover ---------- */
+.cover { display: none; }
+.js .cover {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--yellow);
+  text-align: center;
+  overflow: hidden;
+  perspective: 1400px;
+  background-color: #fdf6cf;
+  background-image: var(--paper);
+  transition: opacity 0.9s ease 1.3s;
+}
+.js .cover.is-open { opacity: 0; pointer-events: none; }
+.js .cover[hidden] { display: none; }
+.js body.cover-locked { overflow: hidden; }
+
+/* The envelope: a pocket (bottom), a pointed flap (top) and a wax seal where they meet */
+.cover {
+  --seal: clamp(6.5rem, 24vw, 9rem);
+  --tip: 58%;   /* how far down the flap's point reaches */
+  --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%238a6a00' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M10 40c10-14 20-14 30 0-10 14-20 14-30 0zM50 0c10 14 10 26 0 40-10-14-10-26 0-40zM50 80c-10-14-10-26 0-40M40 40h40M0 0c8 6 12 12 12 20M80 80c-8-6-12-12-12-20'/%3E%3C/g%3E%3C/svg%3E");
+}
+.env-pocket {
+  position: absolute;
+  inset: 0;
+  background-color: #fbf1b5;
+  background-image: var(--paper);
+  clip-path: polygon(0 100%, 0 30%, 50% var(--tip), 100% 30%, 100% 100%);
+}
+.env-flap-wrap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--tip);
+  filter: drop-shadow(0 6px 10px rgba(111, 85, 0, 0.28));
+  transform-origin: top center;
+  transition: transform 1s cubic-bezier(0.6, 0, 0.3, 1) 0.35s;
+}
+.env-flap {
+  width: 100%;
+  height: 100%;
+  background-color: #f7e9a0;
+  background-image: var(--paper);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.cover.is-open .env-flap-wrap { transform: rotateX(178deg); }
+
+.seal {
+  position: absolute;
+  top: var(--tip);
+  left: 50%;
+  width: var(--seal);
+  height: var(--seal);
+  margin: calc(var(--seal) / -2) 0 0 calc(var(--seal) / -2);
+  padding: 0;
+  border: 0;
+  border-radius: 47% 53% 51% 49% / 52% 47% 53% 48%;
+  background: radial-gradient(circle at 35% 30%, #f2cf5c 0%, #d9a514 45%, #a87a00 100%);
+  box-shadow:
+    inset 0 0 0 calc(var(--seal) * 0.09) rgba(168, 122, 0, 0.55),
+    inset 0 0 0 calc(var(--seal) * 0.11) rgba(255, 240, 180, 0.5),
+    0 6px 14px rgba(80, 60, 0, 0.4);
+  color: #4a3600;
+  cursor: pointer;
+  animation: rise 1s 0.3s ease both, pulse 2.4s 1.6s ease-in-out infinite;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+.seal:hover { filter: brightness(1.06); }
+.seal:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.seal-letters {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: calc(var(--seal) * 0.3);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 0 rgba(255, 240, 180, 0.6);
+}
+.seal-amp { font-style: italic; font-size: 0.75em; margin: 0 0.08em; }
+.cover.is-open .seal { transform: scale(1.25); opacity: 0; animation: none; }
+
+.env-text {
+  position: absolute;
+  top: calc(var(--tip) + var(--seal) / 2 + 1rem);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  animation: rise 1s 0.8s ease both;
+  transition: opacity 0.4s ease;
+}
+.cover.is-open .env-text { opacity: 0; }
+.env-text .script { font-size: clamp(2.5rem, 9vw, 3.75rem); transform: rotate(-4deg); }
+.env-hint {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.script {
+  font-family: 'Great Vibes', 'Brush Script MT', cursive;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+/* ---------- Music button (bottom right) ---------- */
+.music-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(80, 60, 0, 0.22);
+  cursor: pointer;
+}
+.music-toggle[hidden] { display: none; }
+.music-toggle:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 20px; }
+.bars i {
+  width: 4px;
+  height: 5px;              /* flat bars = music paused */
+  border-radius: 2px;
+  background: var(--ink);
+}
+.music-toggle.is-playing .bars i { animation: bounce 0.9s ease-in-out infinite; }
+.music-toggle.is-playing .bars i:nth-child(2) { animation-delay: 0.2s; }
+.music-toggle.is-playing .bars i:nth-child(3) { animation-delay: 0.45s; }
+.music-toggle.is-playing .bars i:nth-child(4) { animation-delay: 0.1s; }
+@keyframes bounce {
+  0%, 100% { height: 5px; }
+  50% { height: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.is-playing .bars i { animation: none; height: 14px; }
+}
+@media print { .music-toggle { display: none !important; } }
+
+/* ---------- Our song (YouTube player) ---------- */
+.song-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--yellow-line);
+  border-radius: 2px;
+  background: #fdf8dc;
+  overflow: hidden;
+}
+.song-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+section[hidden], .field[hidden] { display: none; }
+@media print { #our-song { display: none !important; } }
+
+/* ---------- Story timeline ---------- */
+.story-line {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 1.75rem;
+  border-left: 1px solid var(--yellow-line);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.story-line li { position: relative; display: flex; flex-direction: column; gap: 0.25rem; }
+.story-line li::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.75rem - 6px);
+  top: 0.4rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #d9a514;
+  box-shadow: 0 0 0 4px var(--white);
+}
+.story-line .year {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--gold-text);
+}
+.story-line h3.script { font-size: 2.125rem; }
+.wrap.story { align-items: start; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(43, 42, 38, 0.35); }
+  50% { box-shadow: 0 0 0 12px rgba(43, 42, 38, 0); }
+}
+
+/* ---------- Hero entrance and falling petals ---------- */
+.hero { position: relative; overflow: hidden; }
+.hero > :not(.petals) { position: relative; z-index: 1; }
+
+.js .hero > :not(.petals) { opacity: 0; }
+.js body.opened .hero > :not(.petals) { animation: rise 0.9s ease forwards; }
+.js body.opened .hero > :nth-child(2) { animation-delay: 0.2s; }
+.js body.opened .hero > :nth-child(3) { animation-delay: 0.4s; }
+.js body.opened .hero > :nth-child(4) { animation-delay: 0.6s; }
+.js body.opened .hero > :nth-child(5) { animation-delay: 0.9s; }
+.js body.opened .hero > :nth-child(6) { animation-delay: 1.2s; }
+.js body.opened .hero > :nth-child(7) { animation-delay: 1.4s; }
+.js body.opened .hero > :nth-child(8) { animation-delay: 1.6s; }
+.js body.opened .hero > :nth-child(9) { animation-delay: 1.8s; }
+.js body.opened .hero > :nth-child(10) { animation-delay: 2s; }
+
+.sprig { animation: sway 6s ease-in-out infinite; transform-origin: 50% 90%; }
+@keyframes sway {
+  0%, 100% { rotate: -3deg; }
+  50% { rotate: 3deg; }
+}
+
+.petals { position: absolute; inset: 0; pointer-events: none; }
+.petal {
+  position: absolute;
+  top: -6%;
+  width: 14px;
+  height: 20px;
+  border-radius: 80% 10% 80% 10%;
+  background: #f3e08a;
+  opacity: 0.75;
+  animation: fall linear infinite;
+}
+.petal:nth-child(3n) { background: var(--yellow); }
+.petal:nth-child(4n) { background: #fff6cc; border: 1px solid #f3e08a; }
+@keyframes fall {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, 28vh) rotate(90deg); }
+  50% { transform: translate(-20px, 56vh) rotate(180deg); }
+  75% { transform: translate(25px, 84vh) rotate(270deg); }
+  100% { transform: translate(0, 115vh) rotate(360deg); }
+}
+
+/* ---------- Photos ---------- */
+.photo {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  background: #fdf8dc;
+  border: 1px solid var(--yellow-line);
+}
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* Shown until you add the picture file */
+.photo.missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-style: dashed;
+  border-color: var(--gold);
+  text-align: center;
+}
+.photo.missing img { display: none; }
+.photo.missing::after {
+  content: "Add your photo: " attr(data-file);
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--gold-text);
+  overflow-wrap: anywhere;
+}
+
+.photo.arch {
+  width: min(15rem, 62vw);
+  aspect-ratio: 3 / 4;
+  border-radius: 999px 999px 4px 4px;
+  box-shadow: 0 0 0 8px var(--white), 0 0 0 9px var(--yellow-line);
+}
+.photo.tall { aspect-ratio: 4 / 5; border-radius: 2px; }
+
+/* ---------- Our story ---------- */
+.wrap.story {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  align-items: center;
+  gap: 3rem;
+}
+.story-text { display: flex; flex-direction: column; gap: 1rem; }
+
+/* ---------- Icons, link and colour swatches in the detail cards ---------- */
+.icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 0.5rem;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(111, 85, 0, 0.12); }
+
+.text-link {
+  display: inline-block;
+  padding: 0.625rem 0;
+  color: var(--ink);
+  font-weight: 500;
+  text-underline-offset: 4px;
+}
+.text-link:hover { color: #000000; }
+
+.swatches { display: flex; justify-content: center; gap: 0.625rem; margin-top: 0.5rem; }
+.swatch { width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid #8c8674; }
+.swatch.white { background: var(--white); }
+.swatch.yellow { background: var(--yellow); }
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+.shot {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  font: inherit;
+}
+.shot .photo { aspect-ratio: 1; border-radius: 2px; background: var(--white); }
+.shot:hover .photo img,
+.shot:focus-visible .photo img { transform: scale(1.06); }
+.shot:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.shot[disabled] { cursor: default; }
+
+.lightbox {
+  max-width: min(92vw, 60rem);
+  max-height: 92vh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+.lightbox::backdrop { background: rgba(43, 42, 38, 0.88); }
+.lightbox[open] { animation: rise 0.4s ease; }
+.lightbox img { display: block; max-width: 100%; max-height: 88vh; border: 6px solid var(--white); }
+.lightbox-close {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+.lightbox-close svg { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; }
+.lightbox-close:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* The RSVP form sits on a yellow band, so give it a white card */
+.band .rsvp-form { background: var(--white); }
+
+.sprig.small { animation: none; }
+
+/* ---------- One-by-one reveal for lists and grids ---------- */
+.js .reveal .stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js .reveal.is-visible .stagger > * { opacity: 1; transform: none; }
+.js .reveal.is-visible .stagger > :nth-child(2) { transition-delay: 0.12s; }
+.js .reveal.is-visible .stagger > :nth-child(3) { transition-delay: 0.24s; }
+.js .reveal.is-visible .stagger > :nth-child(4) { transition-delay: 0.36s; }
+.js .reveal.is-visible .stagger > :nth-child(5) { transition-delay: 0.48s; }
+.js .reveal.is-visible .stagger > :nth-child(6) { transition-delay: 0.6s; }
+.js .reveal.is-visible .stagger > :nth-child(7) { transition-delay: 0.72s; }
+.js .reveal.is-visible .stagger > :nth-child(8) { transition-delay: 0.84s; }
+.js .reveal.is-visible .stagger > :nth-child(9) { transition-delay: 0.96s; }
+.js .reveal.is-visible .stagger > :nth-child(10) { transition-delay: 1.08s; }
+
+/* Guests who prefer less motion get a still page */
+@media (prefers-reduced-motion: reduce) {
+  .js .cover { transition: none; }
+  .env-flap-wrap, .seal, .env-text { transition: none; }
+  .seal, .env-text, .sprig, .lightbox[open] { animation: none; }
+  .petals { display: none; }
+  .js .hero > :not(.petals),
+  .js body.opened .hero > :not(.petals) { opacity: 1; animation: none; }
+  .js .reveal .stagger > * { opacity: 1; transform: none; transition: none; }
+  .card, .photo img { transition: none; }
+}
+
+/* ---------- Gentle fade-in while scrolling ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Print: a clean one-colour invitation ---------- */
+@media print {
+  .btn, .rsvp-form, .countdown, .cover, .petals { display: none !important; }
+  .js .hero > :not(.petals), .js .reveal .stagger > * { opacity: 1 !important; transform: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .section, .band, .hero { padding: 1.5rem 1rem; }
+}

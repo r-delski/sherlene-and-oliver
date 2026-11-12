@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#fdf8dc"/>
+<circle cx="300" cy="250" r="190" fill="#fbf1b5"/>
+<g fill="none" stroke="#8a6a00" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M120 700V330a180 180 0 0 1 360 0v370" stroke-dasharray="2 16"/>
+<!-- bride -->
+<circle cx="240" cy="330" r="36" fill="#fff"/>
+<path d="M210 312c-30 40-44 110-40 170" />
+<path d="M240 366c-14 30-20 60-20 90l-70 244h180l-70-244c0-30-6-60-20-90z" fill="#fff"/>
+<!-- groom -->
+<circle cx="360" cy="310" r="36" fill="#fff"/>
+<path d="M320 700V410a40 40 0 0 1 80 0v290z" fill="#f3e08a"/>
+<path d="M345 372l15 26 15-26M360 398v60"/>
+<!-- joined hands and bouquet -->
+<path d="M290 470h34"/>
+<circle cx="292" cy="486" r="16" fill="#f3e08a"/><circle cx="276" cy="502" r="14" fill="#fff"/><circle cx="304" cy="506" r="14" fill="#fff"/>
+<path d="M60 700h480"/>
+</g>
+<g fill="#f3e08a"><circle cx="90" cy="120" r="10"/><circle cx="520" cy="90" r="8"/><circle cx="500" cy="560" r="9"/><circle cx="70" cy="520" r="7"/></g>
+<text x="300" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#6f5500">Sample picture</text>
+</svg>

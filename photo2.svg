@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<rect width="600" height="600" fill="#fff"/>
+<rect x="30" y="30" width="540" height="540" fill="#fdf8dc"/>
+<g fill="none" stroke="#8a6a00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M300 300l-50 190h100zM262 440h76"/>
+<path d="M300 300l-90 60M300 300l90 60" />
+<circle cx="300" cy="210" r="52" fill="#f3e08a"/>
+<circle cx="225" cy="250" r="46" fill="#fff"/>
+<circle cx="375" cy="250" r="46" fill="#fff"/>
+<circle cx="258" cy="170" r="38" fill="#fbf1b5"/>
+<circle cx="342" cy="170" r="38" fill="#fbf1b5"/>
+<circle cx="300" cy="270" r="40" fill="#fff"/>
+<circle cx="300" cy="210" r="14"/><circle cx="225" cy="250" r="12"/><circle cx="375" cy="250" r="12"/><circle cx="300" cy="270" r="11"/>
+</g>
+<text x="300" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#6f5500">Sample picture · the bouquet</text>
+</svg>

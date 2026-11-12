@@ -1,60 +1,57 @@
-HOW TO PUT THIS INVITATION ONLINE (FREE)
-=========================================
+HOW THIS INVITATION IS PUT ONLINE (GITHUB PAGES)
+================================================
 
-The site is plain HTML, CSS and JavaScript. It needs no PHP and no database.
-RSVP replies go to a Google Form, and you read them in a Google Sheet.
+All the site's files sit together in one folder, with no sub-folders:
 
+  index.html   the page
+  style.css    the design
+  script.js    countdown, music, auto-scroll, RSVP settings
+  song.mp3     the background song (optional)
+  *.svg        sample pictures
 
-PART 1 - MAKE THE GOOGLE FORM (for RSVP replies)
-------------------------------------------------
-1. Go to forms.google.com and make a blank form. Name it "Wedding RSVP".
-2. Add exactly four questions, all of type "Short answer", in this order:
-      1. Name
-      2. Attending
-      3. Seats
-      4. Message
-   Leave "Required" switched OFF on all four.
-3. Open Settings > Responses and make sure these are OFF:
-      - Collect email addresses
-      - Limit to 1 response
-   (Guests must be able to answer without signing in to Google.)
-4. Open the Responses tab and click "Link to Sheets" so replies land in a sheet.
-5. Click Send, choose the link icon, and copy the link.
-6. Give that link to Claude, who will fill in GOOGLE_FORM in js/script.js.
-
-   To do it yourself instead: open the form link, right-click > View page source,
-   and search for "entry." - each question has a code like entry.123456789.
-   Put the four codes into GOOGLE_FORM in js/script.js, and set url to the
-   form link with "viewform" replaced by "formResponse".
+RSVP replies go to a Google Form and are read in its Google Sheet.
 
 
-PART 2 - PUT THE SITE ON GITHUB PAGES
--------------------------------------
-1. Make a free account at github.com.
-2. Click "+" > "New repository".
-      - Name: for example  sherlene-and-oliver
-      - Choose "Public" (free GitHub Pages needs a public repository)
-      - Click "Create repository"
-3. On the new page click "uploading an existing file".
-4. Drag in everything INSIDE this folder:
-      index.html, css, js, images, music
-   (Do not drag the "invitation" folder itself. DEPLOY.txt is not needed.)
-5. Click "Commit changes".
-6. Open Settings > Pages. Under "Branch" choose "main" and "/ (root)", then Save.
-7. Wait a minute or two. The address appears at the top of that page:
-      https://YOUR-USERNAME.github.io/sherlene-and-oliver/
+UPLOADING OR UPDATING
+---------------------
+1. Open the repository on github.com.
+2. Click "Add file" > "Upload files".
+3. Drag in the files that changed (or all of them).
+   A file with the same name replaces the old one.
+4. Click "Commit changes". The site updates in a minute or two.
 
-To change something later: edit the files here, then upload the changed files
-to the repository again (same steps 3 to 5). The site updates in a minute.
+First time only: Settings > Pages > Branch "main", folder "/ (root)" > Save.
+The address is then  https://YOUR-USERNAME.github.io/REPOSITORY-NAME/
+
+
+YOUR OWN PHOTOS
+---------------
+Save them with exactly these names, in this same folder, and upload them:
+
+  couple.jpg   main photo at the top (portrait, about 900 x 1200)
+  story.jpg    photo beside "Our adventures" (portrait, about 1000 x 1250)
+  photo1.jpg ... photo6.jpg   gallery photos (square works best)
+
+Each .jpg automatically replaces the sample drawing with the same name.
+Keep each photo under about 500 KB so the page opens quickly on phones.
+
+
+THE SONG
+--------
+The site plays song.mp3 on a loop after the seal is tapped. Without that file
+it plays a soft built-in melody. A public repository lets anyone download the
+file, so use a song you are allowed to share.
+
+
+THE RSVP FORM
+-------------
+The website form sends answers to the Google Form set in GOOGLE_FORM at the
+top of script.js. If you rename a choice or add a question in Google Forms,
+that block must be updated too, or replies will be rejected without warning.
 
 
 BEFORE YOU SHARE THE LINK
 -------------------------
-- Everything in a public repository can be seen and downloaded by anyone,
-  including music/song.mp3. "Panaginip" is copyrighted, so the owner could ask
-  GitHub to remove it. To be safe, delete song.mp3 before uploading; the site
-  then plays its own soft melody.
 - Replace the sample details in index.html: the story, the RSVP date,
   Rodel's number, the best man and the maid of honor.
-- Add your real photos to the images folder (see images/README.txt).
-- Send yourself one test RSVP and check that it shows up in the Google Sheet.
+- Send yourself one test RSVP and check that it shows up in the Google Form.

@@ -10,7 +10,7 @@ var WEDDING_DATE = '2027-06-14T10:00:00+08:00';
 
 // EDIT: the YouTube video used as background music. This is the part of the
 // link after "watch?v=". It repeats on a loop. Set it to '' to use
-// music/song.mp3 or the built-in melody instead.
+// song.mp3 or the built-in melody instead.
 // (The "Panaginip" video HoU1k2oW3W4 cannot be used: its owner blocks embedding.)
 var YOUTUBE_SONG_ID = '';
 
@@ -94,7 +94,7 @@ var GOOGLE_FORM = {
 
   /* ---------- Background music ----------
      Browsers only allow sound after the guest taps something, so the music
-     starts when the seal is tapped. It plays music/song.mp3 if that file
+     starts when the seal is tapped. It plays song.mp3 if that file
      exists; otherwise it plays a soft built-in music-box melody. */
   var audio = document.getElementById('bg-music');
   var musicToggle = document.getElementById('music-toggle');
@@ -163,7 +163,7 @@ var GOOGLE_FORM = {
     if (synth) { synth.resume(); }
   }
 
-  // Plays music/song.mp3, or the built-in melody if that file is missing.
+  // Plays song.mp3, or the built-in melody if that file is missing.
   function playLocal() {
     if (synth || !audio) { playSynth(); return; }
     var attempt = audio.play();
@@ -330,13 +330,11 @@ var GOOGLE_FORM = {
   }
 
   /* ---------- Photos: show a labelled frame until the file is added ---------- */
-  // If your own .jpg is not there yet, show the sample drawing from images/sample/.
+  // If your own .jpg is not there yet, show the sample drawing with the same name (.svg).
   function markMissing(img) {
     if (!img.dataset.triedSample) {
       img.dataset.triedSample = '1';
-      img.src = img.getAttribute('src')
-        .replace('images/', 'images/sample/')
-        .replace('.jpg', '.svg');
+      img.src = img.getAttribute('src').replace('.jpg', '.svg');
       return;
     }
     var frame = img.closest('.photo');
